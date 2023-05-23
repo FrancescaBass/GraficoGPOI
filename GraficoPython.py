@@ -1,10 +1,10 @@
 import pandas as pd
 import plotly.graph_objects as go
-import plotly_express as px
+#import plotly_express as px
 
-dfF = pd.read_csv('D:\Documenti\scuola_2022-2023\GPOI\datiSicurezzaLavoroF.csv')
-dfM = pd.read_csv('D:\Documenti\scuola_2022-2023\GPOI\datiSicurezzaLavoroM.csv')
-dfT = pd.read_csv('D:\Documenti\scuola_2022-2023\GPOI\datiSicurezzaLavoroT.csv')
+dfF = pd.read_csv('./datiSicurezzaLavoroF.csv')
+dfM = pd.read_csv('./datiSicurezzaLavoroM.csv')
+dfT = pd.read_csv('./datiSicurezzaLavoroT.csv')
 
 countryF = dfF["geo"]
 dataF = dfF["dati"]
@@ -76,16 +76,4 @@ fig.update_layout(
     plot_bgcolor='white',
     hovermode='closest',
 )
-fig.show()
-
-
-
-import plotly.express as px
-import pandas as pd
-
-df = pd.read_csv('D:\Documenti\scuola_2022-2023\GPOI\datiSicurezzaLavoroAnni.csv')
-
-fig = px.bar(df, x="geo", y="dati", color="dati",
-  animation_frame="time", animation_group="geo",)
-
 fig.show()
